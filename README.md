@@ -13,12 +13,22 @@ A simple web application built with ASP.NET Core Razor Pages that calculates the
 
 ## Running the Project
 
-1. Clone the repository.
-2. Navigate to project directory `/RetirementCalculator`.
-3. Run `dotnet run`.
+1. **Clone the Repository**
+   
+   git clone https://github.com/yourusername/RetirementCalculator.git
 
-## Usage
+2. **Navigate to the Project Directory**
+   
+   cd Simple_Retirement-Calculator/RetirementCalculator
 
-- Access the application through the web browser.
-- Fill in the form with your current age, retirement age, current savings, monthly savings, and annual interest rate.
-- Submit the form to see the calculated total savings at retirement.
+3. **Restore NuGet Packages**
+   
+   dotnet restore
+
+4. **Build the Application**
+   
+   dotnet build
+   
+5. **Run the Application**
+  
+   dotnet run
