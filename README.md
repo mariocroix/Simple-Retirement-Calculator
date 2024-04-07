@@ -15,11 +15,11 @@ A simple web application built with ASP.NET Core Razor Pages that calculates the
 
 1. **Clone the Repository**
    
-   git clone https://github.com/yourusername/RetirementCalculator.git
+   git clone https://github.com/mariocroix/Simple-Retirement-Calculator.git
 
 2. **Navigate to the Project Directory**
    
-   cd Simple_Retirement-Calculator/RetirementCalculator
+   cd Simple-Retirement-Calculator/RetirementCalculator
 
 3. **Restore NuGet Packages**
    
