@@ -1,0 +1,51 @@
+﻿@page
+@model IndexModel
+
+@{
+    ViewData["Title"] = "Retirement Calculator";
+}
+
+<div class="container">
+    <form method="post" class="card p-4">
+        <div class="form-group mb-3">
+            <label for="CurrentAge" class="form-label">Current Age</label>
+            <input asp-for="Input.CurrentAge" class="form-control" type="number" id="CurrentAge" />
+            <span asp-validation-for="Input.CurrentAge" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-3">
+            <label for="RetirementAge" class="form-label">Retirement Age</label>
+            <input asp-for="Input.RetirementAge" class="form-control" type="number" id="RetirementAge" />
+            <span asp-validation-for="Input.RetirementAge" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-3">
+            <label for="CurrentSavings" class="form-label">Current Savings ($)</label>
+            <input asp-for="Input.CurrentSavings" class="form-control" type="number" step="0.01" id="CurrentSavings" />
+            <span asp-validation-for="Input.CurrentSavings" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-3">
+            <label for="MonthlySavings" class="form-label">Monthly Savings ($)</label>
+            <input asp-for="Input.MonthlySavings" class="form-control" type="number" step="0.01" id="MonthlySavings" />
+            <span asp-validation-for="Input.MonthlySavings" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-4">
+            <label for="AnnualInterestRate" class="form-label">Annual Interest Rate (%)</label>
+            <input asp-for="Input.AnnualInterestRate" class="form-control" type="number" step="0.01" id="AnnualInterestRate" />
+            <span asp-validation-for="Input.AnnualInterestRate" class="text-danger"></span>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Calculate</button>
+        </div>
+    </form>
+
+    @if (Model.Result != null)
+    {
+        <div class="card mt-4 p-4">
+            <h3 class="text-center">Results</h3>
+            <p>Total Savings At Retirement: <strong>@Model.Result.TotalSavingsAtRetirement.ToString("C", new System.Globalization.CultureInfo("en-US"))</strong></p>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
